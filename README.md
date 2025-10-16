@@ -84,7 +84,7 @@ Need Cython expertise? Reach out:
 - 📧 Email: basilwabbs@gmail.com
 - 💼 LinkedIn: [Wabuko Wabuko](https://www.linkedin.com/in/wabuko-wabuko-431669209/)
 - 🐙 GitHub: [@WabukoWabuko](https://github.com/WabukoWabuko)
-- 🌐 Website: [wabukowabuko.github.io](https://wabuko-portfolio.vercel.app)
+- 🌐 Website: [Wabuko Portfolio](https://wabuko-portfolio.vercel.app)
 
 ## 🛠️ Let's Build Something Fast
 
