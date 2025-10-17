@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lesson 3 — Static Typing & Speed</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body class="bg-light">
+  <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="index.html">Cython Mastery</a>
+      <div class="collapse navbar-collapse">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="lessons.html">Lessons</a></li>
+          <li class="nav-item"><a class="nav-link" href="progress.html">Progress</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container py-5">
+    <h1 class="h4 fw-bold mb-3">Lesson 3 — Static Typing & Speed</h1>
+    <p class="text-muted">Learn how adding C types in Cython impacts performance and how to identify hotspots.</p>
+
+    <h6>Example (Python vs typed Cython)</h6>
+    <pre class="p-3 bg-light border"><code># Python
+ def sum_loop(n):
+     total = 0
+     for i in range(n):
+         total += i
+     return total
+
+# Typed Cython (concept)
+# cdef long sum_loop(long n):
+#     cdef long total = 0
+#     cdef long i
+#     for i in range(n):
+#         total += i
+#     return total</code></pre>
+
+    <p class="text-muted">Use `cython -a` to inspect C generated and find Python interactions.</p>
+    <a href="lessons.html" class="btn btn-outline-secondary mt-3">Back to Lessons</a>
+  </main>
+  <script>
+    document.addEventListener('DOMContentLoaded', ()=>{
+      const btn = document.createElement('button');
+      btn.className = 'btn btn-outline-secondary mt-2';
+      btn.textContent = 'Mark lesson complete';
+      btn.addEventListener('click', ()=>{ localStorage.setItem('lesson3','completed'); alert('Lesson 3 marked complete'); });
+      document.querySelector('main').appendChild(btn);
+    });
+  </script>
+</body>
+</html>

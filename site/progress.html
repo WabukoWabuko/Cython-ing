@@ -22,10 +22,45 @@
   <main class="container py-5">
     <h1 class="h3 fw-bold mb-4">Your Progress</h1>
     <div id="progress-tracker" class="mb-4">
-      <!-- Progress tracker will be implemented with localStorage and JS -->
-      <p class="text-muted">Track which lessons you've completed. (Coming soon!)</p>
+      <!-- Progress tracker implemented with localStorage and JS -->
+      <div class="list-group">
+        <div class="list-group-item d-flex justify-content-between align-items-center">
+          <div>Lesson 1 — What is Cython?</div>
+          <div><span id="s1" class="badge bg-secondary">Not done</span></div>
+        </div>
+        <div class="list-group-item d-flex justify-content-between align-items-center">
+          <div>Lesson 2 — Compiling Your First Module</div>
+          <div><span id="s2" class="badge bg-secondary">Not done</span></div>
+        </div>
+        <div class="list-group-item d-flex justify-content-between align-items-center">
+          <div>Lesson 3 — Static Typing & Speed</div>
+          <div><span id="s3" class="badge bg-secondary">Not done</span></div>
+        </div>
+        <div class="list-group-item d-flex justify-content-between align-items-center">
+          <div>Lesson 4 — Integrating C Libraries</div>
+          <div><span id="s4" class="badge bg-secondary">Not done</span></div>
+        </div>
+      </div>
     </div>
     <a href="index.html" class="btn btn-outline-secondary">Back to Home</a>
   </main>
+
+  <script>
+    function update(){
+      for(let i=1;i<=4;i++){
+        const key = 'lesson'+i;
+        const el = document.getElementById('s'+i);
+        if(localStorage.getItem(key) === 'completed'){
+          el.textContent = 'Done';
+          el.className = 'badge bg-success';
+        } else {
+          el.textContent = 'Not done';
+          el.className = 'badge bg-secondary';
+        }
+      }
+    }
+    update();
+    window.addEventListener('storage', update);
+  </script>
 </body>
 </html>

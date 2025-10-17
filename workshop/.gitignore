@@ -1,0 +1,7 @@
+__pycache__/
+build/
+*.so
+*.c
+*.pyd
+.env
+venv/
