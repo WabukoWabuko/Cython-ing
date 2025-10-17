@@ -1,0 +1,31 @@
+/* styles.css - lightweight custom styles */
+
+/* body theme flips in script.js (dark mode toggles 'dark-mode' class) */
+body.dark-mode {
+  background: #0f1720;
+  color: #e6eef6;
+}
+body.dark-mode .navbar {
+  background: #071127 !important;
+}
+body.dark-mode .card {
+  background: #071127;
+  color: #e6eef6;
+  border-color: rgba(255,255,255,0.04);
+}
+body.dark-mode a { color: #9ad1ff; }
+
+a { text-decoration: none; }
+.navbar-brand img { filter: grayscale(100%) brightness(1.2); }
+
+/* make accordion headers more tactile */
+.accordion-button { font-weight: 600; }
+
+/* badges */
+.badge { font-size: 0.8rem; }
+
+/* small responsive tweaks */
+@media (max-width: 768px) {
+  .display-6 { font-size: 1.4rem; }
+}
+

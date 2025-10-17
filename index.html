@@ -1,0 +1,406 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cython Mastery — Course Roadmap | WabukoWabuko</title>
+
+  <!-- Bootstrap 5 CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-light">
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold d-flex align-items-center gap-2" href="#">
+        <img src="data:image/svg+xml;utf8,<?xml version='1.0' encoding='UTF-8'?><svg xmlns='http://www.w3.org/2000/svg' width='28' height='28' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><path d='M12 2 L12 22'/><path d='M2 12 L22 12'/></svg>" alt="logo" class="me-1">
+        Cython Mastery
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navMain">
+        <ul class="navbar-nav ms-auto align-items-lg-center">
+          <li class="nav-item"><a class="nav-link" href="#overview">Overview</a></li>
+          <li class="nav-item"><a class="nav-link" href="#curriculum">Curriculum</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+          <li class="nav-item ms-3">
+            <div class="form-check form-switch mt-2">
+              <input class="form-check-input" type="checkbox" id="themeToggle">
+              <label class="form-check-label small" for="themeToggle">Dark</label>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="py-5">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-7">
+          <h1 class="display-6 fw-bold mb-3">Cython Mastery — Learn it. Build with it. Teach it.</h1>
+          <p class="lead text-muted mb-4">A practical, project-focused curriculum designed to take a Python dev from curious to confident — then give them the tools to teach it. Fast, modern, no fluff.</p>
+
+          <div class="d-flex gap-2">
+            <a href="#curriculum" class="btn btn-primary btn-lg">Start the Course</a>
+            <a id="downloadSyllabus" class="btn btn-outline-secondary btn-lg" role="button">Download Syllabus (JSON)</a>
+          </div>
+        </div>
+
+        <div class="col-lg-5 mt-4 mt-lg-0">
+          <div class="card shadow-sm border-0">
+            <div class="card-body">
+              <h5 class="card-title mb-2">Instructor</h5>
+              <p class="mb-1"><strong>WabukoWabuko</strong> — Software Dev, educator-in-training</p>
+              <p class="text-muted small mb-0">Phone, email, GitHub & portfolio in the contact section. Hit the copy buttons.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container mb-5">
+    <!-- OVERVIEW -->
+    <section id="overview" class="mb-5">
+      <div class="row">
+        <div class="col-lg-8">
+          <h2 class="h4 fw-bold">Course goals</h2>
+          <p class="text-muted">By the end of this program learners will be able to:</p>
+          <ul>
+            <li>Understand how Cython bridges Python and C/C++.</li>
+            <li>Profile Python code, identify hotspots, and accelerate them with Cython.</li>
+            <li>Build, package, and distribute compiled Python extensions.</li>
+            <li>Use advanced features: nogil, memoryviews, calling C/C++ libs.</li>
+            <li>Create teachable materials and demos to show performance impact.</li>
+          </ul>
+        </div>
+
+        <div class="col-lg-4">
+          <div class="card bg-white shadow-sm border-0">
+            <div class="card-body">
+              <h6 class="mb-2">Estimated total time</h6>
+              <p class="h5 fw-bold mb-0">~11–12 weeks</p>
+              <small class="text-muted">Self-paced. Each module lists suggested duration and exercises.</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CURRICULUM -->
+    <section id="curriculum" class="mb-5">
+      <h2 class="h4 fw-bold mb-3">Curriculum — Modules & details</h2>
+
+      <div class="accordion" id="modulesAccordion">
+
+        <!-- Module 1 -->
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="m1">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#mod1">
+              1 — Foundations: Getting Your Feet Wet <span class="badge bg-secondary ms-3">1 week</span>
+            </button>
+          </h2>
+          <div id="mod1" class="accordion-collapse collapse" data-bs-parent="#modulesAccordion">
+            <div class="accordion-body">
+              <h6>Goals</h6>
+              <p class="text-muted">Get comfortable with what Cython is and compile your first module.</p>
+
+              <h6>Topics</h6>
+              <ul>
+                <li>What Cython is; Python vs Cython vs C/C++</li>
+                <li>Install & setup: `pip install cython`, build with `setup.py` and `pyximport`</li>
+                <li>First `.pyx` file, compile, import</li>
+                <li>Simple benchmarks with `timeit`</li>
+              </ul>
+
+              <h6>Exercises</h6>
+              <ol>
+                <li>Write a simple function (fibonacci or sum loop) in Python and in Cython; benchmark both.</li>
+                <li>Explore `cython -a` for a tiny function and explain what you see.</li>
+              </ol>
+
+              <h6>Mini project idea</h6>
+              <p>Micro-benchmarks: build a small page showing time comparisons for simple algos (fib, factorial, sum of list).</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Module 2 -->
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="m2">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#mod2">
+              2 — Cython Language Basics <span class="badge bg-secondary ms-3">2 weeks</span>
+            </button>
+          </h2>
+          <div id="mod2" class="accordion-collapse collapse" data-bs-parent="#modulesAccordion">
+            <div class="accordion-body">
+              <h6>Goals</h6>
+              <p class="text-muted">Learn Cython syntax, static typing, and type conversions.</p>
+
+              <h6>Topics</h6>
+              <ul>
+                <li>`cdef`, `cpdef`, `def` differences</li>
+                <li>Declaring C variables: `int`, `double`, `char *`</li>
+                <li>Memoryviews vs Python lists vs arrays</li>
+                <li>Conversions between Python and C types</li>
+              </ul>
+
+              <h6>Exercises</h6>
+              <ol>
+                <li>Convert a Python loop-heavy function to Cython with `cdef` variables.</li>
+                <li>Measure how much static typing affects perf on a numeric loop.</li>
+              </ol>
+
+              <h6>Mini project idea</h6>
+              <p>Implement a small numeric library (vector ops) using memoryviews and test against NumPy loops.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Module 3 -->
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="m3">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#mod3">
+              3 — Performance Optimization <span class="badge bg-secondary ms-3">2 weeks</span>
+            </button>
+          </h2>
+          <div id="mod3" class="accordion-collapse collapse" data-bs-parent="#modulesAccordion">
+            <div class="accordion-body">
+              <h6>Goals</h6>
+              <p class="text-muted">Profile real code and make targeted Cython optimizations.</p>
+
+              <h6>Topics</h6>
+              <ul>
+                <li>Profiling: `cProfile`, `line_profiler`, `%timeit`</li>
+                <li>Bounds checks, wraparound removal, `cdef` locals</li>
+                <li>Memoryviews, efficient loops</li>
+                <li>GIL: `with nogil`, `prange`, OpenMP basics</li>
+              </ul>
+
+              <h6>Exercises</h6>
+              <ol>
+                <li>Profile a slow function and identify hotspots.</li>
+                <li>Use `cdef` and memoryviews to reduce runtime; measure speedup.</li>
+                <li>Experiment with `with nogil` on a pure C-type loop.</li>
+              </ol>
+
+              <h6>Mini project idea</h6>
+              <p>Build a parallel Monte Carlo simulation using `nogil` + `prange` and demonstrate scaling.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Module 4 -->
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="m4">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#mod4">
+              4 — Interfacing with C & C++ <span class="badge bg-secondary ms-3">1.5 weeks</span>
+            </button>
+          </h2>
+          <div id="mod4" class="accordion-collapse collapse" data-bs-parent="#modulesAccordion">
+            <div class="accordion-body">
+              <h6>Goals</h6>
+              <p class="text-muted">Call native C libs and use C++ classes from Python via Cython.</p>
+
+              <h6>Topics</h6>
+              <ul>
+                <li>`cdef extern from` usage</li>
+                <li>Defining and passing C structs</li>
+                <li>Wrapping C++ classes and exception handling</li>
+              </ul>
+
+              <h6>Exercises</h6>
+              <ol>
+                <li>Wrap a tiny C function (like a custom random or math helper) and call from Python.</li>
+                <li>Wrap a simple C++ class and instantiate it from Python.</li>
+              </ol>
+
+              <h6>Mini project idea</h6>
+              <p>Integrate a small C library (e.g., a fast RNG or compression routine) and expose it as a Python package.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Module 5 -->
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="m5">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#mod5">
+              5 — Real-World Applications <span class="badge bg-secondary ms-3">2 weeks</span>
+            </button>
+          </h2>
+          <div id="mod5" class="accordion-collapse collapse" data-bs-parent="#modulesAccordion">
+            <div class="accordion-body">
+              <h6>Goals</h6>
+              <p class="text-muted">Apply Cython to real Python projects and package extensions.</p>
+
+              <h6>Topics</h6>
+              <ul>
+                <li>Refactor CPU-heavy scripts to Cython</li>
+                <li>NumPy + Cython integration</li>
+                <li>Packaging and building wheels (`pyproject.toml`, `setuptools`)</li>
+              </ul>
+
+              <h6>Exercises</h6>
+              <ol>
+                <li>Pick a real script (web scraping parsing loop, heavy transform) and Cythonize it.</li>
+                <li>Package your Cython module and test install in a clean venv.</li>
+              </ol>
+
+              <h6>Mini project idea</h6>
+              <p>Create a small pip-installable extension (e.g., an image filter or a custom aggregator) and publish a test release.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Module 6 -->
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="m6">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#mod6">
+              6 — Teaching & Sharing Knowledge <span class="badge bg-secondary ms-3">1 week</span>
+            </button>
+          </h2>
+          <div id="mod6" class="accordion-collapse collapse" data-bs-parent="#modulesAccordion">
+            <div class="accordion-body">
+              <h6>Goals</h6>
+              <p class="text-muted">Turn your knowledge into teachable content — demos, slides, and live benchmarking tactics.</p>
+
+              <h6>Topics</h6>
+              <ul>
+                <li>How to explain GIL, nogil, and static typing</li>
+                <li>Live demo recipe: Python → Cython → C</li>
+                <li>Designing hands-on lab exercises</li>
+              </ul>
+
+              <h6>Exercises</h6>
+              <ol>
+                <li>Create a 10–15 minute live demo (slides + code) showing a 5–10x speedup on a real problem.</li>
+                <li>Write 3 step-by-step lab tasks for students to follow locally.</li>
+              </ol>
+
+              <h6>Mini project idea</h6>
+              <p>Deliver a short workshop (recorded or live) and collect feedback; iterate on lesson clarity and demo speed impact.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Module 7 -->
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="m7">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#mod7">
+              7 — Bonus: Deep Dive & Maintenance <span class="badge bg-secondary ms-3">1.5 weeks</span>
+            </button>
+          </h2>
+          <div id="mod7" class="accordion-collapse collapse" data-bs-parent="#modulesAccordion">
+            <div class="accordion-body">
+              <h6>Goals</h6>
+              <p class="text-muted">Understand internals, debugging, and staying current.</p>
+
+              <h6>Topics</h6>
+              <ul>
+                <li>How `.c` files are generated</li>
+                <li>CPython API interactions</li>
+                <li>Debugging Cython: `cython -a`, debug symbols</li>
+                <li>Keeping up with Cython & Python changes</li>
+              </ul>
+
+              <h6>Exercises</h6>
+              <ol>
+                <li>Use `cython -a` on a large function and explain hotspots.</li>
+                <li>Set up debug symbols and reproduce/trace a crash.</li>
+              </ol>
+
+              <h6>Mini project idea</h6>
+              <p>Contribute a doc improvement or small PR to Cython or write a blog post breaking down a tricky internals topic.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Projects & Capstones -->
+    <section id="projects" class="mb-5">
+      <h2 class="h4 fw-bold mb-3">Capstone projects & teaching materials</h2>
+
+      <div class="row g-3">
+        <div class="col-md-6">
+          <div class="card shadow-sm h-100">
+            <div class="card-body">
+              <h5 class="card-title">Capstone A — High-performance Data Pipeline</h5>
+              <p class="card-text text-muted">Cythonize a CSV/Parquet processing pipeline, optimize with memoryviews, and package as an extension used in a small CLI tool.</p>
+              <p class="mb-0"><strong>Deliverables:</strong> repo, benchmarks, installable wheel.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="card shadow-sm h-100">
+            <div class="card-body">
+              <h5 class="card-title">Capstone B — NumPy Kernel & Workshop</h5>
+              <p class="card-text text-muted">Implement a custom NumPy kernel (e.g., image filter), benchmark vs vectorized NumPy, and present a 30-min workshop.</p>
+              <p class="mb-0"><strong>Deliverables:</strong> demo, slides, recording.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="mb-5">
+      <h2 class="h4 fw-bold mb-3">Contact & dev info</h2>
+
+      <div class="row">
+        <div class="col-md-6">
+          <div class="card shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title">WabukoWabuko</h5>
+              <p class="mb-1"><strong>Phone:</strong> <span id="phoneText">+254740750403</span> <button class="btn btn-sm btn-outline-secondary ms-2" data-copy="+254740750403">Copy</button></p>
+              <p class="mb-1"><strong>Email:</strong> <span id="emailText">basilwabbbs@gmail.com</span> <button class="btn btn-sm btn-outline-secondary ms-2" data-copy="basilwabbbs@gmail.com">Copy</button></p>
+              <p class="mb-1"><strong>GitHub:</strong> <a href="https://github.com/WabukoWabuko" target="_blank">github.com/WabukoWabuko</a></p>
+              <p class="mb-1"><strong>Portfolio:</strong> <a href="https://wabuko-portfolio.vercel.app" target="_blank">wabuko-portfolio.vercel.app</a></p>
+              <div class="mt-3">
+                <a href="mailto:basilwabbbs@gmail.com" class="btn btn-primary btn-sm">Email me</a>
+                <a href="tel:+254740750403" class="btn btn-outline-primary btn-sm ms-2">Call</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="card shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title">Quick notes for instructors</h5>
+              <ul>
+                <li>Always show before/after benchmarks live.</li>
+                <li>Encourage students to measure and not guess where hotspots are.</li>
+                <li>Use small, digestible labs that finish in 20–45 minutes.</li>
+              </ul>
+              <p class="text-muted small mb-0">Want custom slides or a workshop plan? Reach out.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="py-4 bg-white border-top">
+    <div class="container text-center">
+      <small class="text-muted">Built & maintained by <strong>WabukoWabuko</strong> — © <span id="year"></span>. Feel free to reuse this curriculum template.</small>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS, Popper included -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
+
